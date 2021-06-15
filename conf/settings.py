@@ -26,7 +26,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #127.0.0.1 is local host
-ALLOWED_HOSTS = ['django-rest-api-katefranks.herokuapp.com/', '127.0.0.1']
+ALLOWED_HOSTS = ['django-rest-api-katefranks.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
