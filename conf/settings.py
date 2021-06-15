@@ -26,7 +26,10 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 #127.0.0.1 is local host
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'django-rest-api-katefranks.herokuapp.com',
+    '127.0.0.1',
+    ]
 
 
 # Application definition
@@ -46,6 +49,7 @@ INSTALLED_APPS = [
     #local
     'api.apps.ApiConfig',
     'menu.apps.MenuConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
@@ -136,3 +140,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+REACT_APP_DIR = os.path.join(BASE_DIR, 'frontend/react-pizza-app')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'frontend/react-pizza-app/build/static'),
+)
