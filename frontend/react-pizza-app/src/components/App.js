@@ -11,7 +11,6 @@ class App extends Component {
       order: [],
     }
     this.addToOrder = this.addToOrder.bind(this);
-    this.saveOrder = this.saveOrder.bind(this);
   }
 
   componentDidMount() {
@@ -29,10 +28,10 @@ class App extends Component {
     this.setState({order});
   }
 
-  saveOrder(order) {
+  // saveOrder(order) {
+  //
 
-
-  }
+  // }
 
   render() {
     return (
