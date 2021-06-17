@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import './App.css';
 import MenuList from './MenuList';
 import Order from './Order';
+import ViewOrders from './ViewOrders';
 
 class App extends Component {
   constructor(props) {
@@ -10,9 +11,11 @@ class App extends Component {
     this.state = {
       items: [],
       order: [],
+      selection: null,
     }
     this.addToOrder = this.addToOrder.bind(this);
     this.saveOrder = this.saveOrder.bind(this);
+    this.removeItem = this.removeItem.bind(this);
   }
 
   componentDidMount() {
@@ -28,6 +31,13 @@ class App extends Component {
     const order = [...this.state.order];
     order.push(orderItem);
     this.setState({order});
+  }
+
+  removeItem(name) {
+    const order = [...this.state.order];
+    const index = order.findIndex(item => item.name === name);
+    order.splice(index, 1);
+    this.setState({ order });
   }
 
   saveOrder(lastName) {
@@ -56,6 +66,7 @@ class App extends Component {
 
   render() {
     return (
+      <>
       <div className="main-menu">
         <header>
           <h1 className="main-header">Greenville Pizza Co.</h1>
@@ -63,8 +74,11 @@ class App extends Component {
           <p>555-555-555</p>
         </header>
         <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
-        <Order order={this.state.order} saveOrder={this.saveOrder} />
+        <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
+        <ViewOrders order={this.state.order} />
+        <button onClick={() => this.setState({selection: null})}>Menu View</button>
       </div>
+      </>
   );}
 }
 export default App;

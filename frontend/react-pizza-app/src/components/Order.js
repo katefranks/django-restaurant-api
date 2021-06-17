@@ -10,7 +10,7 @@ class Order extends React.Component {
     }
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    // this.removeItem = this.removeItem.bind(this);
   }
 
   handleInput(e){
@@ -22,12 +22,13 @@ class Order extends React.Component {
     this.props.saveOrder(this.state.lastName);
     this.setState({lastName: ''});
 }
+
   render(){
   const items = this.props.order.map((item, index) => (
     <li>
       <p>{item.name}</p>
       <p>${item.price}</p>
-      <button>Remove</button>
+      <button type='button' onClick={() => this.props.removeItem(item.name)}>Remove</button>
     </li>
   ));
 
@@ -53,3 +54,5 @@ class Order extends React.Component {
 }
 
 export default Order;
+
+// <button type='button' onClick={() => this.removeItem(item.id)}>Remove</button>

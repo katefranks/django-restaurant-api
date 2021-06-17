@@ -102,6 +102,13 @@ ul{
   padding-inline-start: 0px;
 }
 
+.footer {
+  margin: 5px;
+  text-align: center;
+  font-family: Courier New;
+  
+}
+
 /*
 div {
   display: flex;
