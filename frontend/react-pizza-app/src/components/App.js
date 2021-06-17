@@ -1,4 +1,5 @@
 import {Component} from 'react';
+import Cookies from 'js-cookie';
 import './App.css';
 import MenuList from './MenuList';
 import Order from './Order';
@@ -11,14 +12,15 @@ class App extends Component {
       order: [],
     }
     this.addToOrder = this.addToOrder.bind(this);
+    this.saveOrder = this.saveOrder.bind(this);
   }
 
   componentDidMount() {
 
     // this.setState({items});
-    fetch('/api/v1/')
+    fetch('/api/v1/menu/')
       .then(response => response.json())
-      .then(items => this.setState({items}));
+      .then(data => this.setState({items: data}));
 
   }
 
@@ -28,10 +30,29 @@ class App extends Component {
     this.setState({order});
   }
 
-  // saveOrder(order) {
-  //
+  saveOrder(lastName) {
 
-  // }
+    const subtotal = this.state.order.reduce((acc, i) => acc + i.price, 0);
+
+    const order = {
+        lastName: lastName,
+        orderItems: this.state.order,
+        subtotal,
+      };
+
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': Cookies.get('csrftoken'),
+        },
+        body: JSON.stringify(order),
+      }
+      fetch('/api/v1/orders/', options)
+        .then(response => response.json())
+        .then(data => console.log(data));
+    }
+
 
   render() {
     return (
@@ -42,7 +63,7 @@ class App extends Component {
           <p>555-555-555</p>
         </header>
         <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
-        <Order order={this.state.order} />
+        <Order order={this.state.order} saveOrder={this.saveOrder} />
       </div>
   );}
 }

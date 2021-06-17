@@ -6,4 +6,4 @@ class MenuSerializer(serializers.ModelSerializer):
     class Meta:
             model = Menu
             #fields = '__all__'
-            fields = ('category', 'price', 'name', 'description')
+            fields = ('id', 'category', 'price', 'name', 'description')

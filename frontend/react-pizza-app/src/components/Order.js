@@ -1,5 +1,29 @@
-function Order(props) {
-  const items = props.order.map((item, index) => (
+import React from 'react';
+
+class Order extends React.Component {
+
+  constructor(props){
+    super(props);
+    this.state = {
+      order: [],
+      lastName: '',
+    }
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+
+  }
+
+  handleInput(e){
+    this.setState({[e.target.name]: e.target.value});
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.saveOrder(this.state.lastName);
+    this.setState({lastName: ''});
+}
+  render(){
+  const items = this.props.order.map((item, index) => (
     <li>
       <p>{item.name}</p>
       <p>${item.price}</p>
@@ -7,7 +31,8 @@ function Order(props) {
     </li>
   ));
 
-  const subtotal = props.order.reduce((acc, i) => acc + i.price, 0);
+
+  const subtotal = this.props.order.reduce((acc, i) => acc + i.price, 0);
 
   return (
     <>
@@ -16,11 +41,15 @@ function Order(props) {
       <ul>{items}</ul>
       <div className="add-to-order">Subtotal = ${subtotal}</div>
       <br/>
-      <button onClick ={() => {const { order } = props; localStorage.setItem('order', items);}}>Save Order</button>
+      <form onSubmit={this.handleSubmit}>
+        <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleInput} placeholder="Enter Last Name"/>
+        <button type="submit">Save Order</button>
+      </form>
       <br/>
     </div>
     </>
   )
+}
 }
 
 export default Order;

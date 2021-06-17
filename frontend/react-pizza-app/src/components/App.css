@@ -23,13 +23,13 @@
 li{
   list-style-type: none;
   border: 1px solid black;
+  border-radius: 2px;
   margin: 10px;
   padding: 5px;
   text-align: center;
   color: black;
   background-color: #FFF;
   box-shadow: 2px 2px 5px black;
-
 }
 
 button{

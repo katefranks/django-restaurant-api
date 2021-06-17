@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'api.apps.ApiConfig',
     'menu.apps.MenuConfig',
     'frontend.apps.FrontendConfig',
+    'orders.apps.OrdersConfig',
 ]
 
 MIDDLEWARE = [
