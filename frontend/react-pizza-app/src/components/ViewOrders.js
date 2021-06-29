@@ -7,26 +7,32 @@ class ViewOrders extends React.Component {
     this.state = {
       orders: [],
     }
-    this.handleClick = this.handleClick.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
-  handleClick(){
+  componentDidMount(){
     fetch('/api/v1/orders/')
       .then(response => response.json())
       .then(data => this.setState({ orders: data }));
   }
 
       render() {
-        const orders = this.state.orders.map((order) => (
-          <li>
-            <p>{order.lastName}</p>
-            <p>{JSON.stringify(order.orderItems)}</p>
-          </li>
-        ));
+        const orders = this.state.orders.map((order) => {
+          const orderItems = order.orderItems.map(orderItem =>
+            <li>{orderItem.name}</li>
+          )
+
+          return (
+            <li>
+              <p>{order.lastName}</p>
+              <ul>{orderItems}</ul>
+            </li>
+          )
+        });
 
 
         return(
           <>
-          <button onClick={this.handleClick}>Kitchen View</button>
+
           <div className="kitchen-view">
             <ul>{ orders }</ul>
           </div>
@@ -37,3 +43,26 @@ class ViewOrders extends React.Component {
       }
 
       export default ViewOrders;
+
+
+      // () => (2 + 2)
+      //
+      //
+      // () => {
+      //   return 2 + 2
+      // }
+      //
+      // function() {
+      //   return 2 + 2
+      // }
+
+      // render() {
+      //   const orders = this.state.orders.map((order) => (
+      //     <li>
+      //       <p>{order.lastName}</p>
+      //       <p>{order.orderItems}</p>
+      //
+      //     </li>
+      //   ));
+
+      //  // <p>{JSON.stringify(order.orderItems)}</p>

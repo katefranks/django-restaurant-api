@@ -11,7 +11,7 @@ class App extends Component {
     this.state = {
       items: [],
       order: [],
-      selection: null,
+      selection: 'menu',
     }
     this.addToOrder = this.addToOrder.bind(this);
     this.saveOrder = this.saveOrder.bind(this);
@@ -67,16 +67,29 @@ class App extends Component {
   render() {
     return (
       <>
+      <nav>
+        <ul>
+          <li onClick={() => this.setState({selection: 'menu'})}><p>Menu</p></li>
+          <li onClick={() => this.setState({selection: 'kitchen'})}><p>Kitchen</p></li>
+        </ul>
+      </nav>
       <div className="main-menu">
         <header>
           <h1 className="main-header">Greenville Pizza Co.</h1>
           <p>411 University Ridge, Greenville, SC 29601</p>
           <p>555-555-555</p>
         </header>
-        <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
-        <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
-        <ViewOrders order={this.state.order} />
-        <button onClick={() => this.setState({selection: null})}>Menu View</button>
+
+        {
+          this.state.selection === 'menu'
+          ?
+          <>
+            <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
+            <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
+          </>
+          :
+          <ViewOrders order={this.state.order} />
+        }
       </div>
       </>
   );}
@@ -85,3 +98,18 @@ export default App;
 
 // <MenuCategory category ={this.props.category} />
 // <MenuItem item={this.props.item} />
+
+
+// {
+//   this.state.selection === 'menu'
+//   &&
+//   <>
+//     <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
+//     <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
+//   </>
+// }
+//
+//
+// {
+//   this.state.selection === 'kitchen' && <ViewOrders order={this.state.order} />
+// }
