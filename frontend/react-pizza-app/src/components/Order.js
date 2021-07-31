@@ -10,7 +10,6 @@ class Order extends React.Component {
     }
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    // this.removeItem = this.removeItem.bind(this);
   }
 
   handleInput(e){

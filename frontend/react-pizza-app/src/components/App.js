@@ -4,6 +4,8 @@ import './App.css';
 import MenuList from './MenuList';
 import Order from './Order';
 import ViewOrders from './ViewOrders';
+import 'bootstrap/dist/css/bootstrap.min.css';
+// import { Button , Modal } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +69,7 @@ class App extends Component {
   render() {
     return (
       <>
+
       <nav>
         <ul>
           <li onClick={() => this.setState({selection: 'menu'})}><p>Menu</p></li>
@@ -96,20 +99,17 @@ class App extends Component {
 }
 export default App;
 
-// <MenuCategory category ={this.props.category} />
-// <MenuItem item={this.props.item} />
-
-
-// {
-//   this.state.selection === 'menu'
-//   &&
-//   <>
-//     <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
-//     <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
-//   </>
-// }
+// <Nav variant="tabs" defaultActiveKey="/home">
+//   <Nav.Item>
+//     <Nav.Link href="/home">Active</Nav.Link>
+//   </Nav.Item>
+//   <Nav.Item>
+//     <Nav.Link eventKey="link-1">Option 2</Nav.Link>
+//   </Nav.Item>
+//   <Nav.Item>
+//     <Nav.Link eventKey="disabled" disabled>
+//       Disabled
+//     </Nav.Link>
+//   </Nav.Item>
+// </Nav>
 //
-//
-// {
-//   this.state.selection === 'kitchen' && <ViewOrders order={this.state.order} />
-// }
