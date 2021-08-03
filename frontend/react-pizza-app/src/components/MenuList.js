@@ -18,7 +18,7 @@ class MenuList extends Component {
       const uniqueCategories = [...new Set(categories)]; // an array of categories (no duplicates)
 
       const headings = uniqueCategories.map(category => (
-        <button className="category-button" style={{display: 'flex', flexDirection: 'column', width: '25%', margin: '3px', alignItems: 'center'}} key={category} onClick={() => this.setState({ selection: category })}>{category}</button>
+        <button className="category-button"  key={category} onClick={() => this.setState({ selection: category })}>{category}</button>
       ));
 
       const items = this.props.items

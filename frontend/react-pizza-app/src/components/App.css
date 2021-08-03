@@ -6,6 +6,16 @@
   display: flex;
   justify-content: center;
   background-color: #535659;
+  background-image: url("./images/wood_img.webp");
+}
+
+#restaurant-header{
+  background-image: url("./images/leaves_img.webp");
+  background-color: #cccccc;
+  color: #FFF;
+  box-shadow: 5px 5px 8px #202124;
+  border-radius: 3px;
+  margin-top: 20px;
 }
 
 .main-menu{
@@ -56,6 +66,16 @@ header{
 
 p{
   margin-block-end: 5px;
+}
+
+#phone-number{
+  text-decoration: none;
+  color: #FFF;
+}
+
+#phone-number:hover{
+  text-shadow: 2px 2px black;
+  color: #FFF;
 }
 
 .add-to-order{

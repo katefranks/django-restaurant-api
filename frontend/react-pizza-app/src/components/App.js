@@ -4,6 +4,7 @@ import './App.css';
 import MenuList from './MenuList';
 import Order from './Order';
 import ViewOrders from './ViewOrders';
+import Homepage from './Homepage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
@@ -109,7 +110,15 @@ render() {
   <>
   <Router>
   <div className="main-menu">
-    <Nav variant="pills" bg="dark" defaultActiveKey="/MenuList">
+    <header id="restaurant-header">
+      <h1 className="main-header">Greenville Pizza Co.</h1>
+      <p>411 University Ridge, Greenville, SC 29601</p>
+      <a id="phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
+    </header>
+    <Nav  bg="dark" defaultActiveKey="/MenuList">
+      <Nav.Item>
+        <Nav.Link href="/Homepage">Home</Nav.Link>
+      </Nav.Item>
       <Nav.Item>
         <Nav.Link href="/MenuList">Menu</Nav.Link>
       </Nav.Item>
@@ -117,12 +126,14 @@ render() {
         <Nav.Link href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
       </Nav.Item>
     </Nav>
-    <header>
-      <h1 className="main-header">Greenville Pizza Co.</h1>
-      <p>411 University Ridge, Greenville, SC 29601</p>
-      <p>555-555-555</p>
-    </header>
+
     <Switch>
+      <Route
+        path='/Homepage'
+        render={(props) => (
+        <Homepage />
+        )}
+        />
       <Route
         path='/MenuList'
         render={(props) => (
