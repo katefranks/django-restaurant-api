@@ -5,12 +5,9 @@ import MenuList from './MenuList';
 import Order from './Order';
 import ViewOrders from './ViewOrders';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
-import {BrowserRouter as Router,
-  Switch,
-  Route,
-  Link} from "react-router-dom";
-// import { Button , Modal } from 'react-bootstrap';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -112,12 +109,12 @@ render() {
   <>
   <Router>
   <div className="main-menu">
-    <Nav variant="tabs" defaultActiveKey="/MenuList">
+    <Nav variant="pills" bg="dark" defaultActiveKey="/MenuList">
       <Nav.Item>
         <Nav.Link href="/MenuList">Menu</Nav.Link>
       </Nav.Item>
       <Nav.Item>
-        <Nav.Link href="/ViewOrders">Orders</Nav.Link>
+        <Nav.Link href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
       </Nav.Item>
     </Nav>
     <header>
@@ -136,6 +133,7 @@ render() {
         )}
         />
       <Route
+        eventKey="link-1"
         path='/ViewOrders'
         render={(props) => (
         <ViewOrders order={this.state.order} />

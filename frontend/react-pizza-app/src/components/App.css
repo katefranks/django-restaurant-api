@@ -32,6 +32,14 @@ li{
   box-shadow: 2px 2px 5px black;
 }
 
+.category-button{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 3px;
+  align-items: center;
+}
+
 button{
   box-shadow: 2px 2px 5px #535659;
   border-radius: 3px;
@@ -106,7 +114,7 @@ ul{
   margin: 5px;
   text-align: center;
   font-family: Courier New;
-  
+
 }
 
 /*
