@@ -79,13 +79,13 @@ render() {
       <a id="restaurant-phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
       <Nav className="nav-div" bg="dark" defaultActiveKey="/MenuList">
         <Nav.Item>
-          <Nav.Link href="/Homepage">Home</Nav.Link>
+          <Nav.Link className="navlink-links" href="/Homepage">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/MenuList">Menu</Nav.Link>
+          <Nav.Link className="navlink-links" href="/MenuList">Menu</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
+          <Nav.Link className="navlink-links" href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
         </Nav.Item>
       </Nav>
     </header>

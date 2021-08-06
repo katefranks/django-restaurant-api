@@ -27,7 +27,7 @@ class Order extends React.Component {
     <li>
       <p>{item.name}</p>
       <p>${item.price}</p>
-      <button type='button' onClick={() => this.props.removeItem(item.name)}>Remove</button>
+      <button className="button-add-to-order" type='button' onClick={() => this.props.removeItem(item.name)}>Remove</button>
     </li>
   ));
 
@@ -38,12 +38,12 @@ class Order extends React.Component {
     <>
     <div className="order-container">
       <h2 className="add-to-order">Items Added to Order:</h2>
-      <ul className="ul-items" >{items}</ul>
+      <ul id="order-items-container" className="ul-items" >{items}</ul>
       <div className="add-to-order">Subtotal = ${subtotal}</div>
       <br/>
       <form onSubmit={this.handleSubmit}>
-        <input type="text" name="lastName" value={this.state.lastName} onChange={this.handleInput} placeholder="Enter Last Name"/>
-        <button type="submit">Save Order</button>
+        <input className="input-field" type="text" name="lastName" value={this.state.lastName} onChange={this.handleInput} placeholder="Enter Last Name"/>
+        <button className="button-add-to-order" type="submit">Save Order</button>
       </form>
       <br/>
     </div>

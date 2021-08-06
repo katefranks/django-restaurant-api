@@ -7,6 +7,10 @@ html {
 body {
   background-color: #535659;
   background-image: url("./images/wood_img.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding:0;
   height: 100%;
   overflow: auto;
   margin: 0 auto;
@@ -34,7 +38,7 @@ li{
   text-align: center;
   color: black;
   background-color: #FFF;
-  box-shadow: 2px 2px 5px black;
+  box-shadow: 2px 2px 5px #202124;
 }
 button{
   box-shadow: 2px 2px 5px #535659;
@@ -52,6 +56,7 @@ header{
 
 p{
   margin-block-end: 5px;
+  font-family: Courier;
 }
 
 /* headers */
@@ -59,13 +64,29 @@ p{
   justify-content: center;
 }
 
+.navlink-links{
+  color: #FFF !important;
+}
+
+.navlink-links:hover{
+  color: #9B7C4E !important;
+  text-shadow: 1px 1px #535659;
+}
+
 #main-header{
   background-image: url("./images/leaves_img.webp");
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  text-align:center;
+  margin:auto;
+  padding:0;
   background-color: #cccccc;
   color: #FFF;
-  box-shadow: 5px 5px 8px #202124;
-  border-radius: 3px;
+  box-shadow: 3px 3px 7px #202124;
+  border-radius: 2px;
   width: 100%;
+
 }
 
 #restaurant-header{
@@ -74,6 +95,13 @@ p{
   font-size: 4rem;
   margin-bottom: 10px;
 }
+
+@media only screen and (max-width: 500px) {
+  #restaurant-header {
+    font-size: 3rem;
+  }
+}
+
 
 /* app.js */
 
@@ -96,12 +124,8 @@ p{
 }
 
 #restaurant-phone-number:hover{
-  text-shadow: 2px 2px black;
-  color: #FFF;
-}
-
-.add-to-order{
-  text-shadow: 2px 2px black;
+  text-shadow: 1px 1px black;
+  color: #9B7C4E;
 }
 
 /* MenuList */
@@ -112,6 +136,17 @@ p{
   width: 25%;
   margin: 3px;
   align-items: center;
+  color: #FFF;
+  transition: all 0.2s ease, visibility 0s;
+  background: #A38653;
+  border: 0px solid #5F8F8C;
+  border-radius: 20px;
+}
+
+.category-button:hover{
+  background: #C2B092;
+  border: 0px solid #5F8F8C;
+  text-shadow: 1px 1px black;
 }
 
 .menu-header{
@@ -120,22 +155,104 @@ p{
   font-size: 3rem;
 }
 
+/* order */
+
 .order-container{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #535659;
   color: #FFF;
   padding: 10px 30px;
   border: 1px solid black;
   text-align: center;
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
   box-shadow: 5px 5px 8px #202124;
   border-radius: 3px;
+  background-image: url("./images/leaves_img.webp");
+  background-size: cover; /* or contain depending on what you want */
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+}
+
+#order-items-container{
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .ul-items{
   padding-left: unset !important;
+}
+
+.item-name{
+  font-size: 1.3rem;
+}
+
+.button-add-to-order{
+  margin: 3px;
+  align-items: center;
+  color: #FFF;
+  font-size: 14px;
+  transition: all 0.2s ease, visibility 0s;
+  background: #A38653;
+  border: 0px solid #5F8F8C;
+  border-radius: 20px;
+}
+
+.button-add-to-order:hover{
+  background: #C2B092;
+  border: 0px solid #5F8F8C;
+  text-shadow: 1px 1px black;
+}
+
+.add-to-order{
+  text-shadow: 1px 1px black;
+  font-family: Courier;
+}
+
+.input-field{
+  background-color: rgb(194, 176, 146);
+  border:rgb(232, 232, 232);
+  border-bottom-width: 1px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 3px 10px 1px;
+  border-radius: 4px;
+}
+
+.input-field:hover{
+  background-color: rgb(255, 255, 255);
+  border: rgb(245, 245, 245);
+  border-bottom-width: 1px;
+}
+
+/* homepage */
+.image-container{
+  max-width: 80%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  /* border: solid 10px rgba(194, 176, 146, 0.95); */
+  background-color: #535659;
+  background-image: url("./images/wood_img.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  padding:0;
+  height: 100%;
+  overflow: auto;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.homepage-image{
+  border: solid 10px rgba(194, 176, 146, 0.95);
+  margin: 10px 10px 10px 10px;
+  max-width: 300px;
+  max-height: 300px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 5px #202124;
 }
 
 .footer {

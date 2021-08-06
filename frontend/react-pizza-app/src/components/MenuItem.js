@@ -6,10 +6,10 @@ function MenuItem(props) {
 
   return(
     <li key={item.name}>
-      <p>{item.name}</p>
+      <p className="item-name">{item.name}</p>
       <p>{item.description}</p>
-      <p><button>${item.price}</button></p>
-      <button onClick={() => props.addToOrder(props.item)}>Add to order</button>
+      <p>${item.price}</p>
+      <button className="button-add-to-order" onClick={() => props.addToOrder(props.item)}>add to order</button>
     </li>
   )
 }
