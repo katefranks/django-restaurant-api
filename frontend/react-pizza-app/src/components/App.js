@@ -91,11 +91,11 @@ render() {
     </header>
     <Switch>
       <Route
-        path='/Homepage'
+        path='/homepage'
         render={(props) => (
-        <Homepage />
+          <Homepage/>
         )}
-        />
+      />
       <Route
         path='/MenuList'
         render={(props) => (
