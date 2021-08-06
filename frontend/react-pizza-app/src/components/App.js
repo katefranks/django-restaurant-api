@@ -4,11 +4,10 @@ import './App.css';
 import MenuList from './MenuList';
 import Order from './Order';
 import ViewOrders from './ViewOrders';
-import Homepage from './Homepage';
+import Homepage from './homepage';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav'
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -77,9 +76,9 @@ render() {
       <h1 id="restaurant-header">Greenville Pizza Co.</h1>
       <p>411 University Ridge, Greenville, SC 29601</p>
       <a id="restaurant-phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
-      <Nav className="nav-div" bg="dark" defaultActiveKey="/MenuList">
+      <Nav className="nav-div" bg="dark">
         <Nav.Item>
-          <Nav.Link className="navlink-links" href="/Homepage">Home</Nav.Link>
+          <Nav.Link className="navlink-links" href="/homepage">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link className="navlink-links" href="/MenuList">Menu</Nav.Link>
