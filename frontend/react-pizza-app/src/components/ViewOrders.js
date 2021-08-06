@@ -22,14 +22,14 @@ class ViewOrders extends React.Component {
       return (
         <li>
           <p>{order.lastName}</p>
-          <ul>{orderItems}</ul>
+          <ul className="ul-items">{orderItems}</ul>
         </li>
         )
       });
       return(
         <>
         <div className="kitchen-view">
-          <ul>{ orders }</ul>
+          <ul className="ul-items">{ orders }</ul>
         </div>
         </>
         )

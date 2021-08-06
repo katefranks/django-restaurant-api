@@ -1,3 +1,18 @@
+/* main */
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+  background-color: #535659;
+  background-image: url("./images/wood_img.webp");
+  height: 100%;
+  overflow: auto;
+  margin: 0 auto;
+  z-index: 1;
+}
+
 .App {
   text-align: center;
 }
@@ -5,31 +20,11 @@
 #root{
   display: flex;
   justify-content: center;
-  background-color: #535659;
-  background-image: url("./images/wood_img.webp");
+  /* background-color: #535659;
+  background-image: url("./images/wood_img.webp"); */
 }
 
-#restaurant-header{
-  background-image: url("./images/leaves_img.webp");
-  background-color: #cccccc;
-  color: #FFF;
-  box-shadow: 5px 5px 8px #202124;
-  border-radius: 3px;
-  margin-top: 20px;
-}
-
-.main-menu{
-  background-color: #FFF;;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin: 20px;
-  box-shadow: 5px 5px 8px #202124;
-  border-radius: 3px;
-}
-
+/* elements */
 li{
   list-style-type: none;
   border: 1px solid black;
@@ -41,15 +36,6 @@ li{
   background-color: #FFF;
   box-shadow: 2px 2px 5px black;
 }
-
-.category-button{
-  display: flex;
-  flex-direction: column;
-  width: 25%;
-  margin: 3px;
-  align-items: center;
-}
-
 button{
   box-shadow: 2px 2px 5px #535659;
   border-radius: 3px;
@@ -68,12 +54,48 @@ p{
   margin-block-end: 5px;
 }
 
-#phone-number{
+/* headers */
+.nav-div{
+  justify-content: center;
+}
+
+#main-header{
+  background-image: url("./images/leaves_img.webp");
+  background-color: #cccccc;
+  color: #FFF;
+  box-shadow: 5px 5px 8px #202124;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#restaurant-header{
+  text-align: center;
+  font-family: Courier New, serif;
+  font-size: 4rem;
+  margin-bottom: 10px;
+}
+
+/* app.js */
+
+.main-container{
+  background-color: #FFF;;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  box-shadow: 5px 5px 8px #202124;
+  border-radius: 3px;
+}
+
+
+#restaurant-phone-number{
   text-decoration: none;
   color: #FFF;
 }
 
-#phone-number:hover{
+#restaurant-phone-number:hover{
   text-shadow: 2px 2px black;
   color: #FFF;
 }
@@ -82,34 +104,20 @@ p{
   text-shadow: 2px 2px black;
 }
 
-.main-header{
-  text-align: center;
-  font-family: Courier New, serif;
-  font-size: 4rem;
-  margin-bottom: 10px;
+/* MenuList */
+
+.category-button{
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  margin: 3px;
+  align-items: center;
 }
 
 .menu-header{
   text-align: center;
   font-family: Courier New;
   font-size: 3rem;
-}
-
-table,
-td {
-    border: 1px solid #333;
-    text-align: center;
-}
-
-thead,
-tfoot {
-    background-color: #333;
-    color: #fff;
-}
-
-
-td {
-  padding: 10px;
 }
 
 .order-container{
@@ -126,8 +134,8 @@ td {
   border-radius: 3px;
 }
 
-ul{
-  padding-inline-start: 0px;
+.ul-items{
+  padding-left: unset !important;
 }
 
 .footer {
@@ -136,10 +144,3 @@ ul{
   font-family: Courier New;
 
 }
-
-/*
-div {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-} */

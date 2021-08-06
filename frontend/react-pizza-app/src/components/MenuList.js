@@ -29,7 +29,7 @@ class MenuList extends Component {
         <>
           <h2 className="menu-header">Menu</h2>
           {headings}
-          <ul>
+          <ul className="ul-items">
               { items }
           </ul>
         </>

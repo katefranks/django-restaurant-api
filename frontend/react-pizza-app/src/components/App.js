@@ -68,65 +68,27 @@ class App extends Component {
         .then(data => console.log(data));
     }
 
-
-//   render() {
-//     return (
-//       <>
-//
-//       <nav>
-//         <ul>
-//           <li onClick={() => this.setState({selection: 'menu'})}><p>Menu</p></li>
-//           <li onClick={() => this.setState({selection: 'kitchen'})}><p>Kitchen</p></li>
-//         </ul>
-//       </nav>
-//       <div className="main-menu">
-//         <header>
-//           <h1 className="main-header">Greenville Pizza Co.</h1>
-//           <p>411 University Ridge, Greenville, SC 29601</p>
-//           <p>555-555-555</p>
-//         </header>
-//
-//
-//
-//
-//         {
-//           this.state.selection === 'menu'
-//           ?
-//           <>
-//             <MenuList items={this.state.items} addToOrder={this.addToOrder}/>
-//             <Order order={this.state.order} removeItem={this.removeItem} saveOrder={this.saveOrder}/>
-//           </>
-//           :
-//           <ViewOrders order={this.state.order} />
-//         }
-//       </div>
-//       </>
-//   );}
-// }
-// export default App;
-
 render() {
   return (
   <>
   <Router>
-  <div className="main-menu">
-    <header id="restaurant-header">
-      <h1 className="main-header">Greenville Pizza Co.</h1>
+  <div className="main-container">
+    <header id="main-header">
+      <h1 id="restaurant-header">Greenville Pizza Co.</h1>
       <p>411 University Ridge, Greenville, SC 29601</p>
-      <a id="phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
+      <a id="restaurant-phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
+      <Nav className="nav-div" bg="dark" defaultActiveKey="/MenuList">
+        <Nav.Item>
+          <Nav.Link href="/Homepage">Home</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/MenuList">Menu</Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
+        </Nav.Item>
+      </Nav>
     </header>
-    <Nav  bg="dark" defaultActiveKey="/MenuList">
-      <Nav.Item>
-        <Nav.Link href="/Homepage">Home</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/MenuList">Menu</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/ViewOrders" eventKey="link-1">Orders</Nav.Link>
-      </Nav.Item>
-    </Nav>
-
     <Switch>
       <Route
         path='/Homepage'

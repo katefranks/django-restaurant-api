@@ -38,7 +38,7 @@ class Order extends React.Component {
     <>
     <div className="order-container">
       <h2 className="add-to-order">Items Added to Order:</h2>
-      <ul>{items}</ul>
+      <ul className="ul-items" >{items}</ul>
       <div className="add-to-order">Subtotal = ${subtotal}</div>
       <br/>
       <form onSubmit={this.handleSubmit}>
