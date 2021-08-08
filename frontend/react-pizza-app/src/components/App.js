@@ -90,7 +90,7 @@ render() {
     </header>
     <Switch>
       <Route
-        path='/homepage'
+        exact path="/"
         render={(props) => (
           <Homepage/>
         )}
