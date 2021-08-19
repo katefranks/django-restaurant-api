@@ -78,7 +78,7 @@ render() {
       <a id="restaurant-phone-number"  href={`tel:+ 555-555-555`}>555-555-5555</a>
       <Nav className="nav-div" bg="dark">
         <Nav.Item>
-          <Nav.Link className="navlink-links" href="/homepage">Home</Nav.Link>
+          <Nav.Link className="navlink-links" exact href="/">Home</Nav.Link>
         </Nav.Item>
         <Nav.Item>
           <Nav.Link className="navlink-links" href="/MenuList">Menu</Nav.Link>
